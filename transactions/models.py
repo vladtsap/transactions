@@ -2,7 +2,7 @@ from django.db import models
 
 
 class User(models.Model):
-    id = models.UUIDField()
+    id = models.UUIDField(primary_key=True)
     telegram_id = models.BigIntegerField()
     name = models.CharField(max_length=200)
     username = models.CharField(max_length=200)
@@ -12,7 +12,7 @@ class User(models.Model):
 
 
 class BankClient(models.Model):
-    id = models.UUIDField()
+    id = models.UUIDField(primary_key=True)
     external_id = models.CharField(max_length=60)
     name = models.CharField(max_length=100)
     webhook_url = models.CharField(max_length=200)
@@ -20,7 +20,7 @@ class BankClient(models.Model):
 
 
 class BankAccount(models.Model):
-    id = models.UUIDField()
+    id = models.UUIDField(primary_key=True)
     external_id = models.CharField(max_length=60)
     send_id = models.CharField(max_length=60)
     balance = models.BigIntegerField()
@@ -34,7 +34,7 @@ class BankAccount(models.Model):
 
 
 class BankJar(models.Model):
-    id = models.UUIDField()
+    id = models.UUIDField(primary_key=True)
     external_id = models.CharField(max_length=60)
     send_id = models.CharField(max_length=60)
     title = models.CharField(max_length=60)
@@ -46,7 +46,7 @@ class BankJar(models.Model):
 
 
 class BankTransaction(models.Model):
-    id = models.UUIDField()
+    id = models.UUIDField(primary_key=True)
     external_id = models.CharField(max_length=100)
     time = models.BigIntegerField()
     description = models.CharField(max_length=200)
